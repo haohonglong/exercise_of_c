@@ -4,7 +4,7 @@
 #include <string.h> 
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE 2
+#define SIZE 5
 typedef unsigned int UINT;
 typedef char  String[31];
 typedef struct _book{
@@ -35,22 +35,30 @@ typedef struct _employee{
 int student_print(Student stu);
 int student_input(Student *s);
 int file(FILE *fp,Student *arr);
-int main(void) 
+int main(int argc,char *argv[]) 
 {
 	FILE *fp;
-	fp = fopen("student_list","wb+");
-	if(NULL == fp){
-		puts("ERROR: cannot opent the file!");
-		fclose(fp);
-		exit(1);
-	}
 	UINT i;
 	Student *s,su,arr[SIZE];
-	for(i=0;i < SIZE; i++){
-		s = &arr[i];
-		student_input(s);
+	char * name = "student_list";
+	fp = fopen(name,"rb");
+	if(NULL == fp ||  (fread(&arr,sizeof(arr),SIZE,fp) != SIZE)){
+		fp = fopen(name,"wb+");
+		if(NULL == fp){
+			puts("ERROR: cannot opent the file!");
+			fclose(fp);
+			exit(1);
+		}
+		
+		for(i=0;i < SIZE; i++){
+			system("clear");
+			s = &arr[i];
+			student_input(s);
+		}
+		file(fp,arr);
+	
 	}
-	file(fp,arr);
+
 	for(i=0;i < SIZE; i++){
 
 		student_print(arr[i]);
@@ -90,22 +98,12 @@ int student_input(Student *s){
 
 	puts("bookID:");
 	scanf("%d",&s->B.id);
-	system("clear");
 
 	return 0;
 	
 }
 int student_print(Student stu){
-/*	
-	s->id++;
-	s->school = "xxxxxxx";
-	s->P.id++;
-	s->P.name = "linux";
-	s->P.sex=1;
-	s->P.age=30;
-	s->B.id=10245500;
-	s->B.name="java";
-*/	
+
 	static n =0;
 	if(0 == n){
 		puts("+------------------------------------------------------------------------+");
