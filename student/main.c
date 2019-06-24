@@ -4,37 +4,8 @@
 #include <string.h> 
 #include <stdio.h>
 #include <stdlib.h>
+#include "./student.h"
 #define SIZE 5
-typedef unsigned int UINT;
-typedef char  String[31];
-typedef struct _book{
-	UINT id;
-	String name;
-}Book;
-
-typedef struct _person{
-	UINT id;
-	String name;
-	UINT age;
-	UINT sex;
-}Person;
-typedef struct _student{
-	UINT id;
-	String school;
-	Person P;
-	Book B;
-	
-}Student;
-typedef struct _employee{
-	String number;
-	float wage;
-	String address;
-	Person P;
-}Employee;
-
-int student_print(Student stu);
-int student_input(Student *s);
-int file(FILE *fp,Student *arr);
 int main(int argc,char *argv[]) 
 {
 	FILE *fp;
@@ -81,9 +52,9 @@ int file(FILE *fp,Student *arr){
 	
 }
 int student_input(Student *s){
-	puts("ID:");
-	scanf("%d",&s->id);
-
+	static UINT i=0;
+	s->id = ++i;
+        printf("please input the number %d member \n",i);	
 	puts("age:");
 	scanf("%d",&s->P.age);
 
