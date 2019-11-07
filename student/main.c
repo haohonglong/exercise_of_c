@@ -17,7 +17,6 @@ int main(int argc,char *argv[])
 		fp = fopen(name,"wb+");
 		if(NULL == fp){
 			puts("ERROR: cannot opent the file!");
-			fclose(fp);
 			exit(1);
 		}
 		

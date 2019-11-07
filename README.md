@@ -1,1 +1,1 @@
-# exercise_of_c
+gcc main.c -o b.out -std=c89
