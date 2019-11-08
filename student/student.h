@@ -2,7 +2,7 @@
  * 
  */
 typedef unsigned int UINT;
-typedef char  String[31];
+typedef char  String[255];
 typedef struct _book{
 	UINT id;
 	String name;
