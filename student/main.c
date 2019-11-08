@@ -13,7 +13,8 @@ int main(int argc,char *argv[])
 	Student *s,su,arr[SIZE];
 	char * name = "student_list";
 	fp = fopen(name,"rb");
-	if(NULL == fp ||  (fread(&arr,sizeof(arr),SIZE,fp) != SIZE)){
+	if(NULL == fp ||  (fread(arr,sizeof(arr),SIZE,fp) != SIZE)){
+	puts("--------------------------");
 		fp = fopen(name,"wb+");
 		if(NULL == fp){
 			puts("ERROR: cannot opent the file!");
@@ -38,13 +39,13 @@ int main(int argc,char *argv[])
 
 }
 int file(FILE *fp,Student *arr){
-	if(fwrite(&arr,sizeof(Student),SIZE,fp) != SIZE ){
+	if(fwrite(arr,sizeof(Student),SIZE,fp) != SIZE ){
 		puts("ERROR: Write file error!");
 		fclose(fp);
 		exit(1);
 	}
 	rewind(fp);
-	if(fread(&arr,sizeof(arr),SIZE,fp) != SIZE){
+	if(fread(arr,sizeof(arr),SIZE,fp) != SIZE){
 		puts("ERROR:read file error!");
 		
 	}
