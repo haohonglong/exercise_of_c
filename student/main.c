@@ -75,7 +75,7 @@ int student_input(Student *s){
 }
 int student_print(Student stu){
 
-	static n =0;
+	static int n =0;
 	if(0 == n){
 		puts("+------------------------------------------------------------------------+");
 		puts("| id   | name  |  age  |     school |      bookId  |        bookName     |");
