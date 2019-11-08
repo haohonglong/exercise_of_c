@@ -22,7 +22,7 @@ int main(int argc,char *argv[])
 		
 		for(i=0;i < SIZE; i++){
 			system("clear");
-			s = &arr[i];
+			s = arr+i;
 			student_input(s);
 		}
 		file(fp,arr);
