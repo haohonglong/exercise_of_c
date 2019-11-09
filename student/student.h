@@ -7,7 +7,9 @@ typedef char  str16[16];
 typedef char  str32[32];
 typedef char  str64[64];
 typedef char  str128[128];
-typedef char  str255[255];
+typedef char  str256[256];
+typedef char  str512[512];
+typedef char  str1024[1024];
 typedef struct _book{
 	uint id;
 	str64 name;
