@@ -4,6 +4,7 @@
 #include <string.h> 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "./student.h"
 #define SIZE 5
 int main(int argc,char *argv[]) 
@@ -54,18 +55,33 @@ int file(FILE *fp,Student *arr){
 int student_input(Student *s){
 	static uint i=0;
 	s->id = ++i;
-        printf("please input the number %d member \n",i);	
+        printf("please input the %dth member \n",i);	
 	puts("age:");
 	scanf("%d",&s->P.age);
 
+        name:
 	puts("name:");
 	scanf("%s",s->P.name);
-
+	if(strlen(s->P.name) > 32){
+	  puts("the name of person must be less than 32 characters");
+	  goto name;	
+	}	
+        school:
 	puts("school:");
 	scanf("%s",s->school);
+	if(strlen(s->school) > 64){
+	  puts("the name of school must be less than 64 characters");
+	  goto school;	
+	}	
 
+	book:
 	puts("book:");
 	scanf("%s",s->B.name);
+	if(strlen(s->B.name) > 64){
+	  puts("the name of book must be less than 64 characters");
+	  goto book;	
+	}	
+
 
 	puts("bookID:");
 	scanf("%d",&s->B.id);
