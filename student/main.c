@@ -9,9 +9,9 @@
 int main(int argc,char *argv[]) 
 {
 	FILE *fp;
-	UINT i;
+	uint i;
 	Student *s,su,arr[SIZE];
-	STR16 name = "student_list";
+	str16 name = "student_list";
 	fp = fopen(name,"rb");
 	if(NULL == fp ||  (fread(arr,sizeof(arr),SIZE,fp) != SIZE)){
 	puts("--------------------------");
@@ -52,7 +52,7 @@ int file(FILE *fp,Student *arr){
 	
 }
 int student_input(Student *s){
-	static UINT i=0;
+	static uint i=0;
 	s->id = ++i;
         printf("please input the number %d member \n",i);	
 	puts("age:");

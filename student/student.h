@@ -1,32 +1,35 @@
 /**
  * 
  */
-typedef unsigned int UINT;
-typedef char  STR16[16];
-typedef char  STR32[32];
-typedef char  STR64[64];
+typedef unsigned int uint;
+typedef char  str8[8];
+typedef char  str16[16];
+typedef char  str32[32];
+typedef char  str64[64];
+typedef char  str128[128];
+typedef char  str255[255];
 typedef struct _book{
-	UINT id;
-	STR16 name;
+	uint id;
+	str64 name;
 }Book;
 
 typedef struct _person{
-	UINT id;
-	STR16 name;
-	UINT age;
-	UINT sex;
+	uint id;
+	str32 name;
+	uint age;
+	uint sex;
 }Person;
 typedef struct _student{
-	UINT id;
-	STR64 school;
+	uint id;
+	str64 school;
 	Person P;
 	Book B;
 	
 }Student;
 typedef struct _employee{
-	STR16 number;
+	str16 number;
 	float wage;
-	STR64 address;
+	str64 address;
 	Person P;
 }Employee;
 
