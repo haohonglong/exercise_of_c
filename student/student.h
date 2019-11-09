@@ -2,29 +2,31 @@
  * 
  */
 typedef unsigned int UINT;
-typedef char  String[255];
+typedef char  STR16[16];
+typedef char  STR32[32];
+typedef char  STR64[64];
 typedef struct _book{
 	UINT id;
-	String name;
+	STR16 name;
 }Book;
 
 typedef struct _person{
 	UINT id;
-	String name;
+	STR16 name;
 	UINT age;
 	UINT sex;
 }Person;
 typedef struct _student{
 	UINT id;
-	String school;
+	STR64 school;
 	Person P;
 	Book B;
 	
 }Student;
 typedef struct _employee{
-	String number;
+	STR16 number;
 	float wage;
-	String address;
+	STR64 address;
 	Person P;
 }Employee;
 

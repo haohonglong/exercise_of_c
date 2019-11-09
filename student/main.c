@@ -11,7 +11,7 @@ int main(int argc,char *argv[])
 	FILE *fp;
 	UINT i;
 	Student *s,su,arr[SIZE];
-	char * name = "student_list";
+	STR16 name = "student_list";
 	fp = fopen(name,"rb");
 	if(NULL == fp ||  (fread(arr,sizeof(arr),SIZE,fp) != SIZE)){
 	puts("--------------------------");
