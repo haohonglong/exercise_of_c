@@ -1,3 +1,6 @@
+//打印文件名称，行号
+#define LOG(format,...) printf("%s %s:%d: "format"\n",__TIME__,__FILE__, __LINE__, ##__VA_ARGS__)
+
 typedef struct _SDS{
     int len;
     int free;
