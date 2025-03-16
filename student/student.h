@@ -12,18 +12,18 @@ typedef char  str512[512];
 typedef char  str1024[1024];
 typedef struct _book{
 	uint id;
-	str64 name;
+	str256 name;
 }Book;
 
 typedef struct _person{
 	uint id;
-	str32 name;
+	str256 name;
 	uint age;
 	uint sex;
 }Person;
 typedef struct _student{
 	uint id;
-	str64 school;
+	str512 school;
 	Person P;
 	Book B;
 	
@@ -31,7 +31,7 @@ typedef struct _student{
 typedef struct _employee{
 	str16 number;
 	float wage;
-	str64 address;
+	str512 address;
 	Person P;
 }Employee;
 
